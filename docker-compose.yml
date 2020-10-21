@@ -1,0 +1,8 @@
+version: '3'
+services:
+  caviar:
+    build: .
+    environment:
+     - NODE_ENV=ci
+    ports:
+     - "7070:7071"
