@@ -7,12 +7,12 @@ RUN npm install
 
 COPY . /app
 
-ENV PORT=7070
+ENV PORT=7071
 ENV NODE_ENV=ci
 ENV TOKEN_SECRET=kneopwenklnnsvnwnvsknv213412ncnv
 
 VOLUME /app/log
 
-EXPOSE 7070
+EXPOSE 7071
 
 CMD ["npm", "start"]

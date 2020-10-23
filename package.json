@@ -7,7 +7,7 @@
       "@types/node": "^8.0.29",
       "@types/supertest": "^2.0.10",
       "supertest": "^5.0.0",
-      "ts-node": "3.3.0",
+      "ts-node": "^3.3.0",
       "ts-node-dev": "^1.0.0",
       "typescript": "3.3.3333"
    },

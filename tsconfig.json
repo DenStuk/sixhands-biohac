@@ -1,9 +1,6 @@
 {
    "compilerOptions": {
-      "lib": [
-         "es5",
-         "es6"
-      ],
+      "lib": ["es5", "es6"],
       "target": "es5",
       "module": "commonjs",
       "moduleResolution": "node",
@@ -19,9 +16,6 @@
       "paths": {
          "@root/*": ["src/*"]
       },
-      "typeRoots": [
-         "@types",
-         "./node_modules/@types",
-       ] 
+      "typeRoots": ["@types", "./node_modules/@types"]
    }
 }
