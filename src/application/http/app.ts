@@ -8,6 +8,7 @@ import authRouter from "./router/routes/auth";
 import { errorHandler } from "./middlewares/errorHandler";
 import { RequestError } from "@root/domain/errors/RequestError";
 import { logger } from "./middlewares/logger";
+import appleRouter from "./router/routes/apple";
 
 export class Application {
 
@@ -35,6 +36,7 @@ export class Application {
 
     private registerRoutes(): void {
         this.app.use("/auth", authRouter);
+        this.app.use(appleRouter);
         this.app.all("*", async (req: Request, res: Response) => {
             throw new RequestError(404, "Route not found");
         });
