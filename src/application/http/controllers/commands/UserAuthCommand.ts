@@ -58,7 +58,7 @@ export class UserAuthCommand extends BaseCommand {
         if (!user) throw new RequestError(400, "user not found");
         if (user.resetCode !== resetDto.resetCode) throw new RequestError(400, "invalid reset code");
 
-        await this._repo.update({ id: user.id }, { password: resetDto.password, resetCode: null });
+        await this._repo.update({ id: user.id }, { password: resetDto.newPassword, resetCode: null });
 
         return this.serializeResult(200);
     }
