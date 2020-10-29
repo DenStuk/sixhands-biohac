@@ -8,6 +8,7 @@
       "password": "Biohac123",
       "database": "biohac",
       "synchronize": true,
+      "dropSchema": true,
       "logging": false,
       "entities": ["src/domain/entities/**/*.ts"],
       "migrations": ["src/data/migration/**/*.ts"],
