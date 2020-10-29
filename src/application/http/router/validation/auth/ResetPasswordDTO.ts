@@ -13,6 +13,6 @@ export class ResetPasswordDTO {
     @IsDefined()
     @IsString()
     @MinLength(5, { message: "password must be at least 5 characters" })
-    password: string;
+    newPassword: string;
 
 }
