@@ -13,7 +13,7 @@ export class User {
     @Column()
     public password: string;
 
-    @Column({ type: "string", nullable: true })
+    @Column("varchar", { nullable: true })
     public resetCode: string | null;
 
     @BeforeInsert()
