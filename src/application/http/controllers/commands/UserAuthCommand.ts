@@ -48,7 +48,7 @@ export class UserAuthCommand extends BaseCommand {
     
         await this._repo.update({ id: user.id }, { resetCode: "resetCode" });
 
-        await (new MailerFacade()).sendMail({ from: "email", to: "email", subject: "Them", text: "resetCode" });
+        // await (new MailerFacade()).sendMail({ from: "email", to: "email", subject: "Them", text: "resetCode" });
 
         return this.serializeResult(200);
     }
