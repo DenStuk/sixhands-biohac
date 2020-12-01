@@ -9,6 +9,7 @@ import { UserRegisterDTO } from "../../router/validation/auth/UserRegisterDTO";
 import { EmailDTO } from "../../router/validation/auth/EmailDTO";
 import { ResetPasswordDTO } from "../../router/validation/auth/ResetPasswordDTO";
 import { MailerFacade } from "@root/infrastructure/nodemailer/MailerFacade";
+import { CodeGeneratorService } from "@root/domain/services/CodeGeneratorService";
 
 export class UserAuthCommand extends BaseCommand {
 
@@ -45,10 +46,12 @@ export class UserAuthCommand extends BaseCommand {
     public async forgotPassword(email: EmailDTO) {
         const user = await this._repo.findOne(email);
         if (!user) throw new RequestError(400, "user not found");
-    
-        await this._repo.update({ id: user.id }, { resetCode: "resetCode" });
+        
+        const resetCode = CodeGeneratorService.generate(5);
 
-        // await (new MailerFacade()).sendMail({ from: "email", to: "email", subject: "Them", text: "resetCode" });
+        await this._repo.update({ id: user.id }, { resetCode });
+
+        await (new MailerFacade()).sendMail(resetCode);
 
         return this.serializeResult(200);
     }
