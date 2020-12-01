@@ -10,9 +10,9 @@ export class MailerFacade {
 
     public constructor() { }
 
-    public async sendMail(resetCode: string): Promise<void> {
+    public async sendMail(email: string, resetCode: string): Promise<void> {
           const buffer = fs.readFileSync(path.join(__dirname, "/templates/reset.html"));
-          
+
           let template = buffer.toString();
           template = template.replace("{code}", resetCode);
 
@@ -43,7 +43,7 @@ export class MailerFacade {
                   "to" : [
                     {
                       "name" : "Denis",
-                      "email" : "den.stuk00@gmail.com"
+                      "email" : email
                     },
                   ]
                 }
