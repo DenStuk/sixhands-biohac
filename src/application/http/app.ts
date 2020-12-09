@@ -35,8 +35,8 @@ export class Application {
     }
 
     private registerRoutes(): void {
-        this.app.use("api/auth", authRouter);
-        this.app.use("api", appleRouter);
+        this.app.use("/auth", authRouter);
+        this.app.use(appleRouter);
         this.app.all("*", async (req: Request, res: Response) => {
             throw new RequestError(404, "Route not found");
         });
