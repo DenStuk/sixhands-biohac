@@ -2,8 +2,8 @@
    {
       "name": "production",
       "type": "mysql",
-      "host": "83.166.240.63",
-      "port": 3307,
+      "host": "localhost",
+      "port": 3306,
       "username": "root",
       "password": "password",
       "database": "biohac",
