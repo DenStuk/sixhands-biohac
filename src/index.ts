@@ -1,7 +1,7 @@
 import "module-alias/register";
 import "reflect-metadata";
 import dotenv from "dotenv";
-import { Connection, createConnection, getConnectionOptions } from "typeorm";
+import { createConnection, getConnectionOptions } from "typeorm";
 import { Application } from "./application/http/app";
 
 class Program {

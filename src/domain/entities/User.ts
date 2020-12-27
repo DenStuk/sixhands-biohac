@@ -7,13 +7,13 @@ export class User {
     @PrimaryGeneratedColumn()
     public id: number;
 
-    @Column({ unique: true })
+    @Column("varchar", { length: 250, unique: true })
     public email: string;
 
-    @Column()
+    @Column("varchar", { length: 250 })
     public password: string;
 
-    @Column({ nullable: true })
+    @Column({ length: 40, nullable: true })
     public resetCode: string | null;
 
     @BeforeInsert()
